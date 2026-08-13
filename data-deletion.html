@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Удаление данных / Data deletion — Автозонд</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+           max-width: 780px; margin: 40px auto; padding: 0 20px 64px; line-height: 1.7;
+           color: #1c1c1e; background: #fff; }
+    @media (prefers-color-scheme: dark) { body { color: #e8e8ea; background: #131316; } a { color: #6fb3a0; } }
+    h1 { font-size: 26px; line-height: 1.3; }
+    h2 { font-size: 19px; margin-top: 36px; }
+    p, li { margin: 8px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 15px; }
+    th, td { border: 1px solid rgba(128,128,128,.35); padding: 8px 10px; text-align: left; vertical-align: top; }
+    .box { border: 1px solid rgba(128,128,128,.4); border-radius: 10px; padding: 12px 16px; margin: 20px 0; }
+    hr { border: none; border-top: 1px solid rgba(128,128,128,.3); margin: 48px 0; }
+    footer { margin-top: 48px; font-size: 14px; opacity: .75; }
+  </style>
+</head>
+<body>
+
+<h1>Удаление учётной записи и данных — «Автозонд»</h1>
+
+<p>Приложение «Автозонд» (пакет <code>com.rch.obd2codes</code>) позволяет удалить учётную запись и
+все связанные с ней данные. Ниже — что удаляется, что мы обязаны сохранить и как отправить запрос.</p>
+
+<h2>Как отправить запрос</h2>
+<div class="box">
+  <p><strong>Способ 1 — из приложения.</strong> Откройте вкладку «Ещё» → «О приложении» →
+     «Удалить аккаунт и данные». Приложение подготовит письмо с вашим адресом, вам останется его
+     отправить.</p>
+  <p><strong>Способ 2 — письмом.</strong> Напишите на
+     <a href="mailto:developer.rch@gmail.com?subject=Удаление%20данных">developer.rch@gmail.com</a>
+     с темой «Удаление данных» <strong>с того же адреса, по которому вы входили в приложение</strong>
+     — так мы убедимся, что запрос ваш.</p>
+</div>
+<p>Мы подтверждаем получение запроса в течение 3 рабочих дней и завершаем удаление в течение
+30 календарных дней.</p>
+
+<h2>Что удаляется</h2>
+<table>
+  <tr><th>Данные</th><th>Что происходит</th></tr>
+  <tr><td>Учётная запись и адрес электронной почты</td><td>Удаляются полностью</td></tr>
+  <tr><td>Сессии входа</td><td>Отзываются немедленно</td></tr>
+  <tr><td>Токен доступа Pro</td><td>Отзывается, доступ прекращается</td></tr>
+  <tr><td>Отправленные вами диагностические отчёты</td><td>Удаляются или окончательно обезличиваются
+      (отвязываются от учётной записи) — по вашему выбору, укажите его в письме</td></tr>
+  <tr><td>Хэш VIN, использованный для защиты от повторных наград</td><td>Удаляется</td></tr>
+</table>
+
+<h2>Что сохраняется и почему</h2>
+<p>Запись о совершённой покупке (дата, сумма, идентификатор платежа) сохраняется в обезличенном виде
+— без привязки к вашему email — потому что это требование бухгалтерского и налогового
+законодательства. Такие записи хранятся установленный законом срок и не используются ни для каких
+других целей.</p>
+<p>Данные платёжной операции хранятся также у платёжного сервиса ЮKassa в соответствии с его
+собственными правилами и требованиями законодательства о платежах; на них наш запрос на удаление не
+распространяется.</p>
+
+<h2>Данные на вашем устройстве</h2>
+<p>Счётчик просмотров, журнал поездок, раскладка приборной панели, кэш профиля подключения и
+последний скан хранятся только на телефоне и нам недоступны. Удалить их можно самостоятельно и
+мгновенно: <strong>Настройки Android → Приложения → Автозонд → Хранилище → Очистить данные</strong>,
+либо просто удалив приложение.</p>
+
+<h2>Важно</h2>
+<p>Удаление учётной записи прекращает действие купленного доступа Pro без возможности восстановления
+— доступ привязан именно к учётной записи. Если вы хотите сохранить покупку, не удаляйте
+учётную запись.</p>
+
+<p>Вопросы: <a href="mailto:developer.rch@gmail.com">developer.rch@gmail.com</a></p>
+
+<hr>
+
+<h1>Account and data deletion — Autozond</h1>
+
+<p>Autozond (package <code>com.rch.obd2codes</code>) lets you delete your account and all data linked
+to it. Below is what gets deleted, what we are required to keep, and how to file the request.</p>
+
+<h2>How to request deletion</h2>
+<div class="box">
+  <p><strong>Option 1 — from the app.</strong> Open the "More" tab → "About" → "Delete account and
+     data". The app prepares an email containing your address; you only need to send it.</p>
+  <p><strong>Option 2 — by email.</strong> Write to
+     <a href="mailto:developer.rch@gmail.com?subject=Data%20deletion">developer.rch@gmail.com</a>
+     with the subject "Data deletion" <strong>from the same address you signed in with</strong>, so
+     we can verify the request is yours.</p>
+</div>
+<p>We acknowledge the request within 3 business days and complete deletion within 30 calendar days.</p>
+
+<h2>What is deleted</h2>
+<table>
+  <tr><th>Data</th><th>What happens</th></tr>
+  <tr><td>Account and email address</td><td>Deleted entirely</td></tr>
+  <tr><td>Sign-in sessions</td><td>Revoked immediately</td></tr>
+  <tr><td>Pro entitlement token</td><td>Revoked; access ends</td></tr>
+  <tr><td>Diagnostic reports you submitted</td><td>Deleted, or permanently de-identified (unlinked
+      from the account) — your choice, state it in the email</td></tr>
+  <tr><td>The VIN hash used for reward anti-abuse</td><td>Deleted</td></tr>
+</table>
+
+<h2>What is retained, and why</h2>
+<p>The record of a completed purchase (date, amount, payment identifier) is retained in
+de-identified form — not linked to your email — because accounting and tax law require it. Such
+records are kept for the statutory period and are not used for any other purpose.</p>
+<p>Payment transaction data is also held by the payment provider YooKassa under its own rules and
+payment legislation; our deletion request does not extend to it.</p>
+
+<h2>Data on your device</h2>
+<p>The lookup counter, trip log, dashboard layout, cached connection profile and last scan are stored
+on the phone only and are not accessible to us. You can erase them yourself, instantly:
+<strong>Android Settings → Apps → Autozond → Storage → Clear data</strong>, or by uninstalling
+the app.</p>
+
+<h2>Important</h2>
+<p>Deleting the account ends your purchased Pro access irreversibly — the access is tied to the
+account itself. If you want to keep your purchase, do not delete the account.</p>
+
+<p>Questions: <a href="mailto:developer.rch@gmail.com">developer.rch@gmail.com</a></p>
+
+<footer>
+  <p>Автозонд / Autozond · <a href="privacy-ru.html">Политика конфиденциальности</a> ·
+     <a href="privacy-en.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>

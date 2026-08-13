@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Autozond</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+           max-width: 780px; margin: 40px auto; padding: 0 20px 64px; line-height: 1.7;
+           color: #1c1c1e; background: #fff; }
+    @media (prefers-color-scheme: dark) { body { color: #e8e8ea; background: #131316; } a { color: #6fb3a0; } }
+    h1 { font-size: 26px; line-height: 1.3; }
+    h2 { font-size: 19px; margin-top: 36px; }
+    h3 { font-size: 16px; margin-top: 24px; }
+    p, li { margin: 8px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 15px; }
+    th, td { border: 1px solid rgba(128,128,128,.35); padding: 8px 10px; text-align: left; vertical-align: top; }
+    code { font-size: 14px; background: rgba(128,128,128,.15); padding: 1px 5px; border-radius: 4px; }
+    .lead { font-size: 17px; }
+    footer { margin-top: 48px; font-size: 14px; opacity: .75; }
+  </style>
+</head>
+<body>
+
+<h1>Privacy Policy for Autozond</h1>
+<p><strong>Effective 11 August 2026.</strong></p>
+
+<p class="lead">Autozond is a car diagnostics app that talks to your vehicle through an ELM327
+(OBD-II) adapter. Everything the app collects, where it goes and how to delete it is listed below.
+If anything here is unclear, write to us — the address is at the bottom of the page.</p>
+
+<h2>1. In short</h2>
+<ul>
+  <li>The app works without an account. An email address is needed only to buy Pro or to voluntarily
+      submit a diagnostic report.</li>
+  <li>The <strong>precise location</strong> permission is used solely as a source of vehicle speed.
+      Coordinates are never read, stored or transmitted.</li>
+  <li>Data read from your car (fault codes, odometer, sensor readings, VIN) stays
+      <strong>on your device</strong> and is not sent to a server by default.</li>
+  <li>We do not sell or share data with third parties for advertising. The app has no ads.</li>
+</ul>
+
+<h2>2. What data is collected</h2>
+
+<h3>2.1. Email address</h3>
+<p>Requested in two cases only: when buying Pro, and when voluntarily submitting a diagnostic
+report. Sign-in uses a one-time code (OTP); there is no password. The address is used to:</p>
+<ul>
+  <li>confirm a purchase belongs to you;</li>
+  <li>restore your access after a reinstall or a device change;</li>
+  <li>reply if you contacted support.</li>
+</ul>
+<p>Authentication is handled by <strong>Supabase Auth</strong> (Supabase Inc.) on servers located in
+the European Union. We send no marketing email.</p>
+
+<h3>2.2. Precise location</h3>
+<p>The app declares the <code>ACCESS_FINE_LOCATION</code> permission for two reasons:</p>
+<ul>
+  <li><strong>Speed source.</strong> Some cars do not report vehicle speed over OBD-II. In that case
+      the trip computer and the acceleration test take speed from GNSS — from the Doppler shift of
+      the satellite signal. The app reads <em>only the speed value in km/h</em>. Latitude and
+      longitude are not extracted from the fix, not kept in memory, not written to any file and
+      never transmitted to us or to anyone else. You choose the speed source in settings; if OBD-II
+      is selected, location is not requested at all.</li>
+  <li><strong>Finding a Bluetooth adapter on Android 11 and below.</strong> On those versions a
+      system Bluetooth scan technically required the location permission. On Android 12 and above
+      the app uses <code>BLUETOOTH_SCAN</code> with the <code>neverForLocation</code> flag, which
+      means the system guarantees the app cannot derive location from scan results.</li>
+</ul>
+<p>While a trip is being recorded, <code>TripRecordingService</code> runs in the foreground service
+state (types <code>connectedDevice</code> and <code>location</code>) so the recording survives the
+screen turning off. The same limitation applies in the background: speed only.</p>
+<p>Before the permission is requested for the first time, the app explains separately why it is
+needed. Declining does not block the app — you only lose GPS speed on cars that do not report speed
+over OBD-II.</p>
+
+<h3>2.3. Vehicle data</h3>
+<p>The app reads fault codes, sensor values, odometer readings, the VIN, firmware identifiers and
+on-board test results from the vehicle's control units. This data:</p>
+<ul>
+  <li>is processed on the device;</li>
+  <li>is partly stored locally (last scan, trip log, cached connection profile);</li>
+  <li>leaves the device only when you choose so — by sharing a PDF report, or by agreeing to submit
+      a report (see 2.5).</li>
+</ul>
+<p>The app <strong>never writes to control units</strong> — it only reads and clears fault codes.</p>
+
+<h3>2.4. Analytics and crash reporting</h3>
+<table>
+  <tr><th>Service</th><th>What it collects</th><th>Server location</th></tr>
+  <tr>
+    <td><strong>AppMetrica</strong> (Yandex LLC)</td>
+    <td>De-identified usage events: which screens were opened, whether the purchase screen was
+        shown, whether the adapter connected. Plus technical data the service collects itself:
+        device model, OS version, app version, language, country, install identifier.</td>
+    <td>Russian Federation</td>
+  </tr>
+  <tr>
+    <td><strong>Firebase Analytics</strong> (Google)</td>
+    <td>The same usage events, app instance identifier, device model, OS version, approximate
+        country.</td>
+    <td>United States and other locations of Google infrastructure</td>
+  </tr>
+  <tr>
+    <td><strong>Firebase Crashlytics</strong> (Google)</td>
+    <td>Crash and ANR reports: stack traces, app and OS version, device model, free memory,
+        a de-identified installation identifier.</td>
+    <td>United States and other locations of Google infrastructure</td>
+  </tr>
+</table>
+<p>None of these services receives your email, your VIN, your coordinates or the contents of your
+diagnostic data. Analytics exists so we can tell which features are used and on which cars the app
+fails to read.</p>
+
+<h3>2.5. Voluntary diagnostic report submission</h3>
+<p>The "More" tab offers a "Help the project" action: you can send us the result of a scan of your
+car so we can improve support for that make. It is <strong>entirely voluntary</strong> and runs only
+after you explicitly agree in a separate dialog. What is sent:</p>
+<ul>
+  <li>the make, the communication protocol and how each control unit answered;</li>
+  <li>the adapter dialog log <strong>with the VIN removed</strong> — both in plain text and in the
+      hexadecimal form of the response;</li>
+  <li>an <strong>irreversible VIN hash</strong> (HMAC-SHA256 with a secret salt). The VIN itself is
+      not transmitted. The hash exists only so the server does not grant a reward twice for the same
+      car; the VIN cannot be recovered from it;</li>
+  <li>a Google Play Integrity device attestation token, as protection against automated abuse.</li>
+</ul>
+
+<h3>2.6. Payments</h3>
+<p>Pro is paid for through <strong>YooKassa</strong> (YooMoney LLC). Card details are entered on
+YooKassa's side — the app does not see, receive or store them. From the payment service we receive
+only a payment identifier and its status. Processing of payment data is governed by YooKassa's own
+policy.</p>
+
+<h3>2.7. What is stored on the device only</h3>
+<ul>
+  <li>the counter of free code-description views;</li>
+  <li>the server-signed Pro entitlement token;</li>
+  <li>the cached adapter connection profile (protocol, handshake recipe, device identifier);</li>
+  <li>the trip log and acceleration test results;</li>
+  <li>the dashboard layout;</li>
+  <li>the last diagnostic scan;</li>
+  <li>the adapter dialog log (for debugging only; it does not survive an app restart).</li>
+</ul>
+<p>Cloud backup and device-to-device transfer are <strong>disabled</strong> for this app
+(<code>allowBackup="false"</code>), so none of this ends up in a Google cloud backup.</p>
+
+<h2>3. Legal bases and retention</h2>
+<ul>
+  <li><strong>Email and the purchase record</strong> — basis: performance of our contract with you
+      (providing the access you paid for). Kept while the access is valid, and afterwards only to
+      the extent required by accounting and tax law.</li>
+  <li><strong>Analytics and crash reports</strong> — basis: our legitimate interest in keeping the
+      app working and improving it. Retention is governed by AppMetrica and Firebase.</li>
+  <li><strong>Voluntary diagnostic report</strong> — basis: your consent, given in a separate dialog
+      and revocable by writing to us.</li>
+  <li><strong>Location</strong> — not retained at all: the speed value is used in the moment and
+      never written down.</li>
+</ul>
+
+<h2>4. Your rights</h2>
+<p>You may:</p>
+<ul>
+  <li>ask what data about you we hold;</li>
+  <li>have it corrected;</li>
+  <li><strong>delete your account and the data linked to it</strong> — the procedure is on a
+      separate page: <a href="data-deletion.html">data deletion</a>;</li>
+  <li>withdraw consent to diagnostic report submission;</li>
+  <li>revoke the location permission in Android settings at any time;</li>
+  <li>erase all local data by clearing the app's storage in Android settings, or by uninstalling.</li>
+</ul>
+
+<h2>5. Children</h2>
+<p>The app is intended for vehicle owners and is not directed at children. We do not knowingly
+collect data from anyone under 18.</p>
+
+<h2>6. Changes to this policy</h2>
+<p>For material changes we will update the date at the top of this page and note it in the app or in
+the Google Play release notes.</p>
+
+<h2>7. Contact</h2>
+<p>For any question about your data and privacy:
+<a href="mailto:developer.rch@gmail.com">developer.rch@gmail.com</a></p>
+
+<footer>
+  <p>Autozond · <a href="privacy-ru.html">Русская версия</a> ·
+     <a href="data-deletion.html">Data deletion</a></p>
+</footer>
+
+</body>
+</html>
