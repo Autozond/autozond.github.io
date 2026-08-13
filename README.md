@@ -6,9 +6,9 @@
 
 | Страница | URL |
 |---|---|
-| Политика конфиденциальности (RU) | https://romanchetverikov.github.io/autozond-legal/privacy-ru.html |
-| Privacy policy (EN) | https://romanchetverikov.github.io/autozond-legal/privacy-en.html |
-| Удаление аккаунта и данных | https://romanchetverikov.github.io/autozond-legal/data-deletion.html |
+| Политика конфиденциальности (RU) | https://autozond.github.io/privacy-ru.html |
+| Privacy policy (EN) | https://autozond.github.io/privacy-en.html |
+| Удаление аккаунта и данных | https://autozond.github.io/data-deletion.html |
 
 ## Как обновлять
 
@@ -20,7 +20,7 @@ cp ../Obd2Codes/store/{privacy-ru,privacy-en,data-deletion}.html .
 git commit -am "обновить политику" && git push
 ```
 
-Публикация — минута после пуша. Даты вступления в силу указаны внутри страниц; при смысловых
+Публикация — около минуты после пуша. Даты вступления в силу указаны внутри страниц; при смысловых
 правках дату надо поднимать.
 
 ## Почему отдельный репозиторий
