@@ -93,12 +93,14 @@ on-board test results from the vehicle's control units. This data:</p>
     <td><strong>AppMetrica</strong> (Yandex LLC)</td>
     <td>De-identified usage events: which screens were opened, whether the purchase screen was
         shown, whether the adapter connected. Plus technical data the service collects itself:
-        device model, OS version, app version, language, country, install identifier.</td>
+        device model, OS version, app version, language, country, install identifier,
+        Android advertising ID (AAID).</td>
     <td>Russian Federation</td>
   </tr>
   <tr>
     <td><strong>Firebase Analytics</strong> (Google)</td>
-    <td>The same usage events, app instance identifier, device model, OS version, approximate
+    <td>The same usage events, app instance identifier, Android advertising ID (AAID), device
+        model, OS version, approximate
         country.</td>
     <td>United States and other locations of Google infrastructure</td>
   </tr>
@@ -112,6 +114,9 @@ on-board test results from the vehicle's control units. This data:</p>
 <p>None of these services receives your email, your VIN, your coordinates or the contents of your
 diagnostic data. Analytics exists so we can tell which features are used and on which cars the app
 fails to read.</p>
+<p>The Android advertising ID (AAID) is collected by the analytics SDKs themselves and serves
+anonymous statistics only: the app shows no ads, we build no advertising profiles and we pass this
+identifier to nobody. You can reset or delete it in Android settings under "Privacy" &rarr; "Ads".</p>
 
 <h3>2.5. Voluntary diagnostic report submission</h3>
 <p>The "More" tab offers a "Help the project" action: you can send us the result of a scan of your
